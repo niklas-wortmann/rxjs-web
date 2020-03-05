@@ -8,5 +8,8 @@ export { ResizeNotification, observeResize } from './observer/resizeObserver';
 export { PerformanceNotification, observePerformance } from './observer/performanceObserver';
 export { IntersectionNotification, observeIntersection } from './observer/intersectionObserver';
 
-// GeoLocation API
-export { observePosition, currentPosition } from './web-api/geolocation';
+// Geolocation API
+export { observePosition } from './web-api/geolocation';
+
+// Network API
+export { observeNetwork } from './web-api/network';
