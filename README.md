@@ -8,22 +8,22 @@ The public API surface of this library can be affected by breaking changes withi
 
 ## Supported API Roadmap
 
-| API                                                                                                               | Implemented        | Tested             | Experimental/not well supported |
-| ----------------------------------------------------------------------------------------------------------------- | ------------------ | ------------------ | ------------------------------- |
-| [Bluetooth API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API)                               | :white_check_mark: | :white_check_mark: | :heavy_check_mark:              |
-| [Broadcast Channel API](https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API)                   | :white_check_mark: | :white_check_mark: | :white_check_mark:              |
-| [File and Directory Entries API](https://developer.mozilla.org/en-US/docs/Web/API/File_and_Directory_Entries_API) | :white_check_mark: | :white_check_mark: | :heavy_check_mark:              |
-| [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/geolocation)                         | :heavy_check_mark: | :white_check_mark: | :white_check_mark:              |
-| [Image Capture API](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream_Image_Capture_API)               | :white_check_mark: | :white_check_mark: | :heavy_check_mark:              |
-| [IntersectionObserver](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)                | :heavy_check_mark: | :white_check_mark: | :heavy_check_mark:              |
-| [MutationObserver](https://developer.mozilla.org/de/docs/Web/API/MutationObserver)                                | :heavy_check_mark: | :white_check_mark: | :white_check_mark:              |
-| [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation)                    | :heavy_check_mark: | :white_check_mark: | :heavy_check_mark:              |
-| [PerformanceObserver](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)                       | :heavy_check_mark: | :white_check_mark: | :heavy_check_mark:              |
-| [Push API](https://developer.mozilla.org/en-US/docs/Web/API/Push_API)                                             | :white_check_mark: | :white_check_mark: | :heavy_check_mark:              |
-| [ResizeObserver](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver)                                 | :heavy_check_mark: | :white_check_mark: | :heavy_check_mark:              |
-| [Sensor APIs](https://developer.mozilla.org/en-US/docs/Web/API/Sensor_APIs)                                       | :white_check_mark: | :white_check_mark: | :heavy_check_mark:              |
-| [Vibration API](https://developer.mozilla.org/en-US/docs/Web/API/Vibration_API)                                   | :white_check_mark: | :white_check_mark: | :heavy_check_mark:              |
-| [Web Workers API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API)                               | :white_check_mark: | :white_check_mark: | :white_check_mark:              |
+| API                                                                                                               | Implemented | Tested  | Experimental/not well supported |
+| ----------------------------------------------------------------------------------------------------------------- | ----------- | ------- | ------------------------------- |
+| [Bluetooth API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API)                               | &#9744;     | &#9744; | &#9745;                         |
+| [Broadcast Channel API](https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API)                   | &#9744;     | &#9744; | &#9744;                         |
+| [File and Directory Entries API](https://developer.mozilla.org/en-US/docs/Web/API/File_and_Directory_Entries_API) | &#9744;     | &#9744; | &#9745;                         |
+| [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/geolocation)                         | &#9745;     | &#9744; | &#9744;                         |
+| [Image Capture API](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream_Image_Capture_API)               | &#9744;     | &#9744; | &#9745;                         |
+| [IntersectionObserver](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)                | &#9745;     | &#9744; | &#9745;                         |
+| [MutationObserver](https://developer.mozilla.org/de/docs/Web/API/MutationObserver)                                | &#9745;     | &#9744; | &#9744;                         |
+| [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation)                    | &#9745;     | &#9744; | &#9745;                         |
+| [PerformanceObserver](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)                       | &#9745;     | &#9744; | &#9745;                         |
+| [Push API](https://developer.mozilla.org/en-US/docs/Web/API/Push_API)                                             | &#9744;     | &#9744; | &#9745;                         |
+| [ResizeObserver](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver)                                 | &#9745;     | &#9744; | &#9745;                         |
+| [Sensor APIs](https://developer.mozilla.org/en-US/docs/Web/API/Sensor_APIs)                                       | &#9744;     | &#9744; | &#9745;                         |
+| [Vibration API](https://developer.mozilla.org/en-US/docs/Web/API/Vibration_API)                                   | &#9744;     | &#9744; | &#9745;                         |
+| [Web Workers API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API)                               | &#9744;     | &#9744; | &#9744;                         |
 
 ## Credits
 
