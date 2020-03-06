@@ -10,20 +10,20 @@ The public API surface of this library can be affected by breaking changes withi
 
 | API                                                                                                               | Implemented | Tested | Experimental/not well supported |
 | ----------------------------------------------------------------------------------------------------------------- | ----------- | ------ | ------------------------------- |
-| [Bluetooth API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API)                               | []          | []     | [x]                             |
-| [Broadcast Channel API](https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API)                   | []          | []     | []                              |
-| [File and Directory Entries API](https://developer.mozilla.org/en-US/docs/Web/API/File_and_Directory_Entries_API) | []          | []     | [x]                             |
-| [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/geolocation)                         | [x]         | []     | []                              |
-| [Image Capture API](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream_Image_Capture_API)               | []          | []     | [x]                             |
-| [IntersectionObserver](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)                | [x]         | []     | [x]                             |
-| [MutationObserver](https://developer.mozilla.org/de/docs/Web/API/MutationObserver)                                | [x]         | []     |                                 |
-| [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation)                    | [x]         | []     | [x]                             |
-| [PerformanceObserver](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)                       | [x]         | []     | [x]                             |
-| [Push API](https://developer.mozilla.org/en-US/docs/Web/API/Push_API)                                             | []          | []     | [x]                             |
-| [ResizeObserver](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver)                                 | [x]         | []     | [x]                             |
-| [Sensor APIs](https://developer.mozilla.org/en-US/docs/Web/API/Sensor_APIs)                                       | []          | []     | [x]                             |
-| [Vibration API](https://developer.mozilla.org/en-US/docs/Web/API/Vibration_API)                                   | []          | []     | [x]                             |
-| [Web Workers API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API)                               | []          | []     | []                              |
+| [Bluetooth API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API)                               | - [ ]       | - [ ]  | - [x]                           |
+| [Broadcast Channel API](https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API)                   | - [ ]       | - [ ]  | - [ ]                           |
+| [File and Directory Entries API](https://developer.mozilla.org/en-US/docs/Web/API/File_and_Directory_Entries_API) | - [ ]       | - [ ]  | - [x]                           |
+| [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/geolocation)                         | - [x]       | - [ ]  | - [ ]                           |
+| [Image Capture API](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream_Image_Capture_API)               | - [ ]       | - [ ]  | - [x]                           |
+| [IntersectionObserver](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)                | - [x]       | - [ ]  | - [x]                           |
+| [MutationObserver](https://developer.mozilla.org/de/docs/Web/API/MutationObserver)                                | - [x]       | - [ ]  | - [ ]                           |
+| [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation)                    | - [x]       | - [ ]  | - [x]                           |
+| [PerformanceObserver](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)                       | - [x]       | - [ ]  | - [x]                           |
+| [Push API](https://developer.mozilla.org/en-US/docs/Web/API/Push_API)                                             | - [ ]       | - [ ]  | - [x]                           |
+| [ResizeObserver](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver)                                 | - [x]       | - [ ]  | - [x]                           |
+| [Sensor APIs](https://developer.mozilla.org/en-US/docs/Web/API/Sensor_APIs)                                       | - [ ]       | - [ ]  | - [x]                           |
+| [Vibration API](https://developer.mozilla.org/en-US/docs/Web/API/Vibration_API)                                   | - [ ]       | - [ ]  | - [x]                           |
+| [Web Workers API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API)                               | - [ ]       | - [ ]  | - [ ]                           |
 
 ## Credits
 
