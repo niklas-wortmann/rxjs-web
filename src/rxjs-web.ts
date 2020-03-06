@@ -10,8 +10,8 @@ export {
 export { ResizeNotification, fromResizeObserver as observeResize } from './observer/resizeObserver';
 export {
   PerformanceNotification,
-  fromPerformanceObserver as observePerformance
-} from './observer/performanceObserver';
+} from './types/observer';
+export { fromPerformanceObserver as observePerformance } from './observer/performanceObserver'
 export {
   IntersectionNotification,
   fromIntersectionObserver as observeIntersection
