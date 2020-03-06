@@ -12,6 +12,7 @@ The public API surface of this library can be affected by breaking changes withi
 | ----------------------------------------------------------------------------------------------------------------- | ----------- | ------- | ------------------------------- |
 | [Bluetooth API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API)                               | &#9744;     | &#9744; | &#9745;                         |
 | [Broadcast Channel API](https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API)                   | &#9744;     | &#9744; | &#9744;                         |
+| [dynamic import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)             | &#9744;     | &#9744; | &#9744;                         |
 | [File and Directory Entries API](https://developer.mozilla.org/en-US/docs/Web/API/File_and_Directory_Entries_API) | &#9744;     | &#9744; | &#9745;                         |
 | [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/geolocation)                         | &#9745;     | &#9744; | &#9744;                         |
 | [Image Capture API](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream_Image_Capture_API)               | &#9744;     | &#9744; | &#9745;                         |
