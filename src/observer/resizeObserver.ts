@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { ObserverNotification } from '../types/observer';
 
-export type ResizeNotification = ObserverNotification<ResizeObserverEntry, ResizeObserver>
+export type ResizeNotification = ObserverNotification<ResizeObserverEntry, ResizeObserver>;
 
 /**
  * A RxJS operator for getting results from the
@@ -19,7 +19,6 @@ export function fromResizeObserver(
       (entries, observer) => {
         subscriber.next({ entries, observer });
       });
-
     resizeObserver.observe(target, options);
     return () => resizeObserver.unobserve(target);
   });

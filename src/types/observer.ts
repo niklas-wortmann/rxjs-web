@@ -9,5 +9,19 @@ export interface ObserverNotification<T = any, O = any> {
   /**
    * The Observer from the notification API
    */
-  observer: Readonly<O>
+  observer: Readonly<O>;
+}
+
+/**
+ * Performance Observer notification
+ */
+export interface PerformanceNotification {
+  /**
+   * A performance observer entry list
+   */
+  entries: PerformanceObserverEntryList;
+  /**
+   * The Performance Observer
+   */
+  observer: PerformanceObserver;
 }

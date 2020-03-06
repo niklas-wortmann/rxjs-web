@@ -18,9 +18,7 @@ export function fromMutationObserver(
     const mutationObserver = new MutationObserver(
       (entries, observer) => {
         subscriber.next({ entries, observer });
-      }
-    );
-
+      });
     mutationObserver.observe(target, options);
     return () => mutationObserver.disconnect();
   });

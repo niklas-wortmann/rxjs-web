@@ -19,7 +19,6 @@ export function fromIntersectionObserver(
       (entries, observer) => {
         subscriber.next({ entries, observer });
       }, options);
-
     intersectionObserver.observe(target);
     return () => intersectionObserver.unobserve(target);
   });
