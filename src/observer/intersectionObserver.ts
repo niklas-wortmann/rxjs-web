@@ -15,12 +15,12 @@ export function fromIntersectionObserver(
   options?: IntersectionObserverInit
 ): Observable<IntersectionNotification> {
   return new Observable(subscriber => {
-    const insersectionObserver = new IntersectionObserver(
-      (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
+    const intersectionObserver = new IntersectionObserver(
+      (entries, observer) => {
         subscriber.next({ entries, observer });
       }, options);
 
-    insersectionObserver.observe(target);
-    return () => insersectionObserver.unobserve(target);
+    intersectionObserver.observe(target);
+    return () => intersectionObserver.unobserve(target);
   });
 }

@@ -16,7 +16,7 @@ export function fromMutationObserver(
 ): Observable<MutationNotification> {
   return new Observable(subscriber => {
     const mutationObserver = new MutationObserver(
-      (entries: MutationRecord[], observer: MutationObserver) => {
+      (entries, observer) => {
         subscriber.next({ entries, observer });
       }
     );
