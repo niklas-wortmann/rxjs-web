@@ -16,6 +16,7 @@ The public API surface of this library can be affected by breaking changes withi
 | [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/geolocation)                         | &#9745;     | &#9744; | &#9744;                         |
 | [Image Capture API](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream_Image_Capture_API)               | &#9744;     | &#9744; | &#9745;                         |
 | [IntersectionObserver](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)                | &#9745;     | &#9744; | &#9745;                         |
+| [matchMedia](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia)                                  | &#9745;     | &#9744; | &#9744;                         |
 | [MutationObserver](https://developer.mozilla.org/de/docs/Web/API/MutationObserver)                                | &#9745;     | &#9744; | &#9744;                         |
 | [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation)                    | &#9745;     | &#9744; | &#9745;                         |
 | [PerformanceObserver](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)                       | &#9745;     | &#9744; | &#9745;                         |

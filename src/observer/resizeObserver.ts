@@ -5,7 +5,7 @@ export interface ResizeNotification {
   observer: Readonly<ResizeObserver>;
 }
 
-export function observeResize(
+export function fromResizeObserver(
   target: Element,
   options?: ResizeObserverOptions
 ): Observable<ResizeNotification> {

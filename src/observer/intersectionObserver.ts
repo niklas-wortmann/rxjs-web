@@ -5,7 +5,7 @@ export interface IntersectionNotification {
   observer: IntersectionObserver;
 }
 
-export function observeIntersection(
+export function fromIntersectionObserver(
   target: Element,
   options?: IntersectionObserverInit
 ): Observable<IntersectionNotification> {

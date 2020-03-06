@@ -5,7 +5,7 @@ export interface PerformanceNotification {
   observer: PerformanceObserver;
 }
 
-export function observePerformance(
+export function fromPerformanceObserver(
   options?: PerformanceObserverInit
 ): Observable<PerformanceNotification> {
   return new Observable(subscriber => {

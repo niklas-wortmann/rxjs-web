@@ -5,7 +5,7 @@ export interface MutationNotification {
   observer: Readonly<MutationObserver>;
 }
 
-export function observeMutation(
+export function fromMutationObserver(
   target: Node,
   options?: MutationObserverInit
 ): Observable<MutationNotification> {
