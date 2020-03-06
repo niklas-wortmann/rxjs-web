@@ -6,7 +6,9 @@ import { fromEventPattern, Observable } from 'rxjs';
  * @param mediaQueryList The media query list to observe
  * @returns An Observable of events from the media query
  */
-function fromMediaListQuery(mediaQueryList: MediaQueryList): Observable<MediaQueryListEvent> {
+export function fromMediaListQuery(
+  mediaQueryList: MediaQueryList
+): Observable<MediaQueryListEvent> {
   return fromEventPattern(
     handler => mediaQueryList.addEventListener('change', handler),
     handler => mediaQueryList.removeEventListener('change', handler)

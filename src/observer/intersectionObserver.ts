@@ -1,7 +1,10 @@
 import { Observable } from 'rxjs';
 import { ObserverNotification } from '../types/observer';
 
-export type IntersectionNotification = ObserverNotification<IntersectionObserverEntry, IntersectionObserver>;
+export type IntersectionNotification = ObserverNotification<
+  IntersectionObserverEntry,
+  IntersectionObserver
+>;
 
 /**
  * A RxJS operator for getting results from the
@@ -15,10 +18,9 @@ export function fromIntersectionObserver(
   options?: IntersectionObserverInit
 ): Observable<IntersectionNotification> {
   return new Observable(subscriber => {
-    const intersectionObserver = new IntersectionObserver(
-      (entries, observer) => {
-        subscriber.next({ entries, observer });
-      }, options);
+    const intersectionObserver = new IntersectionObserver((entries, observer) => {
+      subscriber.next({ entries, observer });
+    }, options);
     intersectionObserver.observe(target);
     return () => intersectionObserver.unobserve(target);
   });

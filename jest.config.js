@@ -12,29 +12,21 @@ module.exports = {
   moduleFileExtensions: [...defaults.moduleFileExtensions, 'ts'],
   coveragePathIgnorePatterns: [
     '/node_modules/',
-    '/test/'
+    '/test/',
+    '/src/rxjs-web.ts'
   ],
   coverageThreshold: {
     'global': {
-      'branches': 90,
-      'functions': 95,
-      'lines': 95,
-      'statements': 95
+      'branches': 60,
+      'functions': 60,
+      'lines': 75,
+      'statements': 75
     }
   },
   collectCoverageFrom: [
-    'src/*.{js,ts}'
+    'src/**/*.{js,ts}'
   ],
-  globals: {
-    window: {},
-    navigator: {
-      geolocation: {
-        watchPosition: (success, faulure) => {
-          success({timestamp: Date.now});
-        },
-        clearWatch: () => {
-        },
-      }
-    }
-  }
+  setupFiles: [
+    './mocks/browser.js'
+  ]
 };

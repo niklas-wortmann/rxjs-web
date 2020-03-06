@@ -5,7 +5,7 @@ export interface ObserverNotification<T = any, O = any> {
   /**
    * An array of entries returned from the notification API
    */
-  entries: ReadonlyArray<T> | Readonly<T>;
+  entries: ReadonlyArray<T>;
   /**
    * The Observer from the notification API
    */

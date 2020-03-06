@@ -15,10 +15,9 @@ export function fromResizeObserver(
   options?: ResizeObserverOptions
 ): Observable<ResizeNotification> {
   return new Observable(subscriber => {
-    const resizeObserver = new ResizeObserver(
-      (entries, observer) => {
-        subscriber.next({ entries, observer });
-      });
+    const resizeObserver = new ResizeObserver((entries, observer) => {
+      subscriber.next({ entries, observer });
+    });
     resizeObserver.observe(target, options);
     return () => resizeObserver.unobserve(target);
   });

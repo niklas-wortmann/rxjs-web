@@ -13,10 +13,9 @@ export function fromPerformanceObserver(
   options?: PerformanceObserverInit
 ): Observable<PerformanceNotification> {
   return new Observable(subscriber => {
-    const performanceObserver = new PerformanceObserver(
-      (entries, observer) => {
-        subscriber.next({ entries, observer });
-      });
+    const performanceObserver = new PerformanceObserver((entries, observer) => {
+      subscriber.next({ entries, observer });
+    });
     performanceObserver.observe(options);
     return () => performanceObserver.disconnect();
   });

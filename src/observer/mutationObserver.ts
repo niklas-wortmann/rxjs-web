@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { ObserverNotification } from '../types/observer';
 
-export type MutationNotification = ObserverNotification<MutationRecord[], MutationObserver>;
+export type MutationNotification = ObserverNotification<MutationRecord, MutationObserver>;
 
 /**
  * A RxJS operator for getting results from the
@@ -15,10 +15,9 @@ export function fromMutationObserver(
   options?: MutationObserverInit
 ): Observable<MutationNotification> {
   return new Observable(subscriber => {
-    const mutationObserver = new MutationObserver(
-      (entries, observer) => {
-        subscriber.next({ entries, observer });
-      });
+    const mutationObserver = new MutationObserver((entries, observer) => {
+      subscriber.next({ entries, observer });
+    });
     mutationObserver.observe(target, options);
     return () => mutationObserver.disconnect();
   });

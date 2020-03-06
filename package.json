@@ -73,6 +73,7 @@
     "jest-config": "^25.1.0",
     "jest-environment-puppeteer": "^4.4.0",
     "jest-puppeteer": "^4.4.0",
+    "jsdom": "^16.2.0",
     "lint-staged": "^10.0.8",
     "lodash.camelcase": "^4.3.0",
     "mock-geolocation": "^1.0.11",
