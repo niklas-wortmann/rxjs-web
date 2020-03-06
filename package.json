@@ -14,9 +14,13 @@
     "type": "git",
     "url": ""
   },
+  "contributors": [{
+    "name": "Tane Piper",
+    "url": "https://github.com/tanepiepr"
+  }],
   "license": "MIT",
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=10.0.0"
   },
   "scripts": {
     "lint": "tslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
