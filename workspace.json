@@ -43,6 +43,7 @@
   "cli": {
     "defaultCollection": "@nrwl/workspace"
   },
+  "defaultProject": "rxjs-web",
   "schematics": {
     "@nrwl/workspace": {
       "library": {

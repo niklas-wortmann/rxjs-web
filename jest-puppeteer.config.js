@@ -1,9 +1,9 @@
 module.exports = {
   launch: {
     dumpio: true,
-    headless: process.env.CI,
+    headless: typeof process.env.CI !== 'undefined',
     args: ['--disable-gpu']
   },
   browser: 'chromium',
-  exitOnPageError: false,
+  exitOnPageError: false
 };
