@@ -10,5 +10,9 @@
     "tslint.json": "*",
     "nx.json": "*"
   },
-  "projects": {}
+  "projects": {
+    "rxjs-web": {
+      "tags": []
+    }
+  }
 }

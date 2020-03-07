@@ -8,14 +8,16 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "target": "es2015",
-    "module": "esnext",
+    "target": "es5",
+    "module": "es2015",
     "typeRoots": ["node_modules/@types"],
-    "lib": ["es2017", "dom"],
+    "lib": ["dom","es2018"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "rxjs-web": ["libs/rxjs-web/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

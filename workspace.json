@@ -1,6 +1,45 @@
 {
   "version": 1,
-  "projects": {},
+  "projects": {
+    "rxjs-web": {
+      "root": "libs/rxjs-web",
+      "sourceRoot": "libs/rxjs-web/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "config": "libs/rxjs-web/.eslintrc",
+            "tsConfig": [
+              "libs/rxjs-web/tsconfig.lib.json",
+              "libs/rxjs-web/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/rxjs-web/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/rxjs-web/jest.config.js",
+            "tsConfig": "libs/rxjs-web/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "builder": "@nrwl/node:package",
+          "options": {
+            "outputPath": "dist/libs/rxjs-web",
+            "tsConfig": "libs/rxjs-web/tsconfig.lib.json",
+            "packageJson": "libs/rxjs-web/package.json",
+            "main": "libs/rxjs-web/src/index.ts",
+            "assets": ["libs/rxjs-web/*.md"]
+          }
+        }
+      }
+    }
+  },
   "cli": {
     "defaultCollection": "@nrwl/workspace"
   },
