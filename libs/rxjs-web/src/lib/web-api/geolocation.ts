@@ -6,9 +6,15 @@ import { Observable } from 'rxjs';
  * @param options Geolocation options
  * @returns An Observable of current browser location
  */
-export function observePosition(options?: PositionOptions): Observable<Position> {
+export function observePosition(
+  options?: PositionOptions
+): Observable<Position> {
   return new Observable(subscriber => {
-    if (navigator && navigator.geolocation && navigator.geolocation.watchPosition) {
+    if (
+      navigator &&
+      navigator.geolocation &&
+      navigator.geolocation.watchPosition
+    ) {
       const watchId = navigator.geolocation.watchPosition(
         position => !subscriber.closed && subscriber.next(position),
         error => !subscriber.closed && subscriber.error(error),

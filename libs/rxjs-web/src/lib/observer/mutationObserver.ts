@@ -1,8 +1,6 @@
 import { Observable } from 'rxjs';
 import { MutationNotification, ObserverNotification } from '../types/observer';
 
-
-
 /**
  * A RxJS operator for getting results from the
  * {@link https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver|MutationObserver API}

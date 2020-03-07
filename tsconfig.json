@@ -10,7 +10,7 @@
     "importHelpers": true,
     "target": "es5",
     "module": "esnext",
-    "lib": ["dom","es2018"],
+    "lib": ["dom", "es2018"],
     "typeRoots": ["node_modules/@types"],
     "strict": true,
     "allowSyntheticDefaultImports": true,

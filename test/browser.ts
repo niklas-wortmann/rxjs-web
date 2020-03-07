@@ -2,7 +2,7 @@ const { JSDOM } = require('jsdom');
 const dom = new JSDOM();
 
 class GenericObserver {
-  constructor(fn) {
+  constructor(fn: any) {
     fn([], {});
   }
 
@@ -10,11 +10,11 @@ class GenericObserver {
 }
 
 class MockPerformanceObserver {
-  constructor(fn) {
+  constructor(fn: any) {
     fn({
       getEntries: () => [],
-      getEntriesByName: name => [],
-      getEntriesByType: type => []
+      getEntriesByName: (name: string) => [],
+      getEntriesByType: (type: string) => []
     });
   }
 
@@ -27,13 +27,14 @@ Object.assign(global, {
   navigator: {
     ...dom.window.navigator,
     geolocation: {
-      watchPosition: (success, faulure) => {
+      watchPosition: (success: any, faulure: any) => {
         success({ timestamp: Date.now });
       },
       clearWatch: () => {}
     },
     connection: {
-      addEventListener: (name, handler) => handler({ event: true }),
+      addEventListener: (name: string, handler: any) =>
+        handler({ event: true }),
       removeEventListener: () => {}
     }
   }

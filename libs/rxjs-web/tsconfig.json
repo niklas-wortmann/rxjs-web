@@ -3,7 +3,5 @@
   "compilerOptions": {
     "types": ["node", "jest", "resize-observer-browser"]
   },
-  "include": [
-    "**/*.ts"
-  ]
+  "include": ["**/*.ts"]
 }
