@@ -24,7 +24,9 @@
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
     "help": "nx help",
-    "travis-deploy-once": "travis-deploy-once"
+    "travis-deploy-once": "travis-deploy-once",
+    "semantic-release": "semantic-release",
+    "semantic-release-prepare": "ts-node tools/semantic-release-prepare"
   },
   "private": true,
   "dependencies": {
@@ -44,13 +46,39 @@
     "eslint": "6.8.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.2.3",
     "jest": "25.1.0",
     "jest-environment-puppeteer": "^4.4.0",
+    "lint-staged": "^10.0.8",
     "prettier": "^1.19.1",
     "puppeteer": "^2.1.1",
+    "semantic-release": "^17.0.4",
+    "travis-deploy-once": "^5.0.11",
     "ts-jest": "25.2.1",
     "ts-node": "~8.6.2",
     "tslint": "~6.0.0",
     "typescript": "~3.8.3"
-  }
-}
+  },
+  "lint-staged": {
+    "{src}/**/*.ts": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "files": [
+    "dist"
+  ],
+  "author": "Jan-Niklas Wortmann <6104311+JWO719@users.noreply.github.com>",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "contributors": [{
+    "name": "Tane Piper",
+    "url": "https://github.com/tanepiepr"
+  }],
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "types": "src/**/*.d.ts"
+ }
