@@ -1,10 +1,5 @@
 import { Observable } from 'rxjs';
-import { ObserverNotification } from '../types/observer';
-
-export type IntersectionNotification = ObserverNotification<
-  IntersectionObserverEntry,
-  IntersectionObserver
->;
+import { IntersectionNotification } from '../types/observer';
 
 /**
  * A RxJS operator for getting results from the

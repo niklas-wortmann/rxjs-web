@@ -1,10 +1,7 @@
 import { Observable } from 'rxjs';
-import { ObserverNotification } from '../types/observer';
+import { MutationNotification, ObserverNotification } from '../types/observer';
 
-export type MutationNotification = ObserverNotification<
-  MutationRecord,
-  MutationObserver
->;
+
 
 /**
  * A RxJS operator for getting results from the

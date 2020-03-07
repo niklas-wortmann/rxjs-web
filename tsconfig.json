@@ -16,7 +16,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "rxjs-web": ["libs/rxjs-web/src/index.ts"]
+      "rxjs-web": ["libs/rxjs-web/src/index.ts", "dist/libs/rxjs-web/index.js"]
     }
   },
   "exclude": ["node_modules", "tmp"]

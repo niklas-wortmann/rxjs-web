@@ -13,6 +13,13 @@
   "projects": {
     "rxjs-web": {
       "tags": []
+    },
+    "rxjs-web-demo": {
+      "tags": []
+    },
+    "rxjs-web-demo-e2e": {
+      "tags": [],
+      "implicitDependencies": ["rxjs-web-demo"]
     }
   }
 }
