@@ -1,5 +1,13 @@
 import { Observable } from 'rxjs';
-import { ResizeNotification } from '../types/observer';
+import { ObserverNotification } from '../types/observer';
+
+/**
+ * Resize Observer Notification
+ */
+export type ResizeNotification = ObserverNotification<
+  ResizeObserverEntry,
+  ResizeObserver
+>;
 
 /**
  * A RxJS operator for getting results from the

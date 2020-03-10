@@ -1,5 +1,18 @@
 import { Observable } from 'rxjs';
-import { PerformanceNotification } from '../types/observer';
+
+/**
+ * Performance Observer notification
+ */
+export interface PerformanceNotification {
+  /**
+   * A performance observer entry list
+   */
+  entries: PerformanceObserverEntryList;
+  /**
+   * The Performance Observer
+   */
+  observer: PerformanceObserver;
+}
 
 /**
  * A RxJS operator for getting results from the

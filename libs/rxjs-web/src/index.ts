@@ -3,10 +3,22 @@
 // ...
 
 // Observer API
-export { fromMutationObserver as observeMutation } from './lib/observer/mutationObserver';
-export { fromResizeObserver as observeResize } from './lib/observer/resizeObserver';
-export { fromPerformanceObserver as observePerformance } from './lib/observer/performanceObserver';
-export { fromIntersectionObserver as observeIntersection } from './lib/observer/intersectionObserver';
+export {
+  fromMutationObserver as observeMutation,
+  MutationNotification
+} from './lib/observer/mutationObserver';
+export {
+  fromResizeObserver as observeResize,
+  ResizeNotification
+} from './lib/observer/resizeObserver';
+export {
+  fromPerformanceObserver as observePerformance,
+  PerformanceNotification
+} from './lib/observer/performanceObserver';
+export {
+  fromIntersectionObserver as observeIntersection,
+  IntersectionNotification
+} from './lib/observer/intersectionObserver';
 
 // Geolocation API
 export { observePosition } from './lib/web-api/geolocation';
