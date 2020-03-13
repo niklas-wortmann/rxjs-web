@@ -1,13 +1,20 @@
+import { Subject } from 'rxjs';
 import { observeWebWorker } from './web-worker';
 
 describe('observeWebWorker', () => {
-  let worker: Worker;
+  it('should support posting a message via string worker', done => {
+    const postMessage = new Subject<any>();
 
-  beforeEach(() => {
-    worker = new Worker('./worker.js');
+    observeWebWorker('./worker.js', postMessage).subscribe(response => {
+      expect(response).toBe('THIS IS A TEST');
+      done();
+    });
+
+    postMessage.next('this is a test');
   });
 
   it('should support posting a message via passed worker', done => {
+    const worker = new Worker('./worker.js');
     observeWebWorker(worker).subscribe(response => {
       expect(response).toBe('THIS IS A TEST');
       done();
