@@ -1,17 +1,17 @@
 import { fromIntersectionObserver } from './intersectionObserver';
 
 describe('fromIntersectionObserver', () => {
-  let element: Element;
+	let element: Element;
 
-  beforeEach(() => {
-    element = document.createElement('div');
-  });
+	beforeEach(() => {
+		element = document.createElement('div');
+	});
 
-  it('should return an interaction observer', () => {
-    fromIntersectionObserver(element).subscribe({
-      next: ({ entries, observer }) => {
-        expect(entries).toBeInstanceOf(Array);
-      }
-    });
-  });
+	it('should return an interaction observer', () => {
+		fromIntersectionObserver(element).subscribe({
+			next: ({ entries }) => {
+				expect(entries).toBeInstanceOf(Array);
+			},
+		});
+	});
 });

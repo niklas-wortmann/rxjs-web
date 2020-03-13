@@ -1,13 +1,10 @@
-import { Observable } from 'rxjs';
+import { Observable, TeardownLogic } from 'rxjs';
 import { ObserverNotification } from '../types/observer';
 
 /**
  * Intersection observer Notification
  */
-export type IntersectionNotification = ObserverNotification<
-  IntersectionObserverEntry,
-  IntersectionObserver
->;
+export type IntersectionNotification = ObserverNotification<IntersectionObserverEntry, IntersectionObserver>;
 
 /**
  * A RxJS operator for getting results from the
@@ -17,17 +14,15 @@ export type IntersectionNotification = ObserverNotification<
  * @returns An Observable containing a list of `IntersectionObserverEntry` items and the `IntersectionObserver`
  */
 export function fromIntersectionObserver(
-  target: Element,
-  options?: IntersectionObserverInit
+	target: Element,
+	options?: IntersectionObserverInit
 ): Observable<IntersectionNotification> {
-  return new Observable(subscriber => {
-    const intersectionObserver = new IntersectionObserver(
-      (entries, observer) => {
-        subscriber.next({ entries, observer });
-      },
-      options
-    );
-    intersectionObserver.observe(target);
-    return () => intersectionObserver.unobserve(target);
-  });
+	return new Observable(subscriber => {
+		const intersectionObserver = new IntersectionObserver((entries, observer) => {
+			subscriber.next({ entries, observer });
+		}, options);
+		intersectionObserver.observe(target);
+		const teardown: TeardownLogic = () => intersectionObserver.unobserve(target);
+		return teardown;
+	});
 }

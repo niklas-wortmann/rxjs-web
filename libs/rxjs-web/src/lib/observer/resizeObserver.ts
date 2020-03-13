@@ -1,13 +1,10 @@
-import { Observable } from 'rxjs';
+import { Observable, TeardownLogic } from 'rxjs';
 import { ObserverNotification } from '../types/observer';
 
 /**
  * Resize Observer Notification
  */
-export type ResizeNotification = ObserverNotification<
-  ResizeObserverEntry,
-  ResizeObserver
->;
+export type ResizeNotification = ObserverNotification<ResizeObserverEntry, ResizeObserver>;
 
 /**
  * A RxJS operator for getting results from the
@@ -16,15 +13,13 @@ export type ResizeNotification = ObserverNotification<
  * @param options `ResizeObserver` options
  * @returns An Observable containing a list of `ResizeObserverEntry` items and the `ResizeObserver`
  */
-export function fromResizeObserver(
-  target: Element,
-  options?: ResizeObserverOptions
-): Observable<ResizeNotification> {
-  return new Observable(subscriber => {
-    const resizeObserver = new ResizeObserver((entries, observer) => {
-      subscriber.next({ entries, observer });
-    });
-    resizeObserver.observe(target, options);
-    return () => resizeObserver.unobserve(target);
-  });
+export function fromResizeObserver(target: Element, options?: ResizeObserverOptions): Observable<ResizeNotification> {
+	return new Observable(subscriber => {
+		const resizeObserver = new ResizeObserver((entries, observer) => {
+			subscriber.next({ entries, observer });
+		});
+		resizeObserver.observe(target, options);
+		const teardown: TeardownLogic = () => resizeObserver.unobserve(target);
+		return teardown;
+	});
 }

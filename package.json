@@ -75,14 +75,8 @@
   "author": "Jan-Niklas Wortmann <6104311+JWO719@users.noreply.github.com>",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/JWO719/rxjs-web"
   },
-  "contributors": [
-    {
-      "name": "Tane Piper",
-      "url": "https://github.com/tanepiepr"
-    }
-  ],
   "engines": {
     "node": ">=10.0.0"
   },

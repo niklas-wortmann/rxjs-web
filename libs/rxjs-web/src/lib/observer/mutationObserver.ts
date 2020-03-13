@@ -4,10 +4,7 @@ import { ObserverNotification } from '../types/observer';
 /**
  * Mutation Notification
  */
-export type MutationNotification = ObserverNotification<
-  MutationRecord,
-  MutationObserver
->;
+export type MutationNotification = ObserverNotification<MutationRecord, MutationObserver>;
 
 /**
  * A RxJS operator for getting results from the
@@ -16,15 +13,12 @@ export type MutationNotification = ObserverNotification<
  * @param options `MutationObserver` options
  * @returns An Observable containing a list of `MutationRecord` items and the `MutationObserver`
  */
-export function fromMutationObserver(
-  target: Node,
-  options?: MutationObserverInit
-): Observable<MutationNotification> {
-  return new Observable(subscriber => {
-    const mutationObserver = new MutationObserver((entries, observer) => {
-      subscriber.next({ entries, observer });
-    });
-    mutationObserver.observe(target, options);
-    return () => mutationObserver.disconnect();
-  });
+export function fromMutationObserver(target: Node, options?: MutationObserverInit): Observable<MutationNotification> {
+	return new Observable(subscriber => {
+		const mutationObserver = new MutationObserver((entries, observer) => {
+			subscriber.next({ entries, observer });
+		});
+		mutationObserver.observe(target, options);
+		return mutationObserver.disconnect;
+	});
 }
