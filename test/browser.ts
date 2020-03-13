@@ -21,6 +21,18 @@ class MockPerformanceObserver {
   observe() {}
 }
 
+class MockWorker {
+  constructor(public path: string) {}
+
+  postMessage(message: string, options?: Transferable[]) {
+    this.onmessage(message.toUpperCase());
+  }
+
+  onmessage(response: string) {}
+
+  onerror() {}
+}
+
 Object.assign(global, { document: dom.window.document });
 Object.assign(global, { window: dom.window });
 Object.assign(global, {
@@ -44,4 +56,8 @@ Object.assign(global, {
   MutationObserver: GenericObserver,
   ResizeObserver: GenericObserver,
   PerformanceObserver: MockPerformanceObserver
+});
+
+Object.assign(global, {
+  Worker: MockWorker
 });
