@@ -1,0 +1,16 @@
+{
+  "name": "rxjs-web",
+  "version": "0.0.1",
+  "dependencies": {
+    "@types/resize-observer-browser": "^0.1.3"
+  },
+  "type": "src/index.ts",
+  "author": "Jan-Niklas Wortmann <6104311+JWO719@users.noreply.github.com>",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  }
+}
