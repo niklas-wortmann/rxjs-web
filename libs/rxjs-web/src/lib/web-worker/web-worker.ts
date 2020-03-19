@@ -1,18 +1,28 @@
-import { Observable, Subscription } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 /**
- * Provide an observable web worker
+ * Provides a tuple that contains an Observable of worker messages
+ * and a subject to provide messages to the worker
  * @param worker
- * @param postMessage
  */
-export function observeWebWorker(
-  worker: Worker | string,
-  postMessage?: Observable<any>
-): Observable<MessageEvent> {
-  let subscription: Subscription;
+export function observeWebWorker<T = any>(
+  worker: Worker | string
+): [Observable<MessageEvent>, Subject<T>] {
+
+  /**
+   * Internal subject to allow messages to be posted to a web worker
+   */
+  const postMessage = new Subject<T>();
+
+  /**
+   * Worker provided by the user, or created using the passed path
+   */
   const innerWorker = typeof worker === 'string' ? new Worker(worker) : worker;
 
-  return new Observable(subscriber => {
+  /**
+   * Observable of the worker messages
+   */
+  const observableWorker = new Observable<MessageEvent>(subscriber => {
     innerWorker.onmessage = function(message) {
       subscriber.next(message);
     };
@@ -20,17 +30,15 @@ export function observeWebWorker(
     innerWorker.onerror = function(error) {
       subscriber.error(error);
     };
-    if (postMessage) {
-      subscription = postMessage.subscribe(message =>
-        innerWorker.postMessage(message)
-      );
-    }
+    const subscription = postMessage.subscribe(message =>
+      innerWorker.postMessage(message)
+    );
 
     return () => {
-      if (subscription) {
-        subscription.unsubscribe();
-      }
+      subscription.unsubscribe();
       innerWorker.terminate();
     };
   });
+
+  return [observableWorker, postMessage];
 }
