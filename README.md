@@ -12,7 +12,7 @@ The public API surface of this library can be affected by breaking changes withi
 | ----------------------------------------------------------------------------------------------------------------- | ----------- | ------- | ------------------------------- |
 | [Bluetooth API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API)                               | &#9744;     | &#9744; | &#9745;                         |
 | [Broadcast Channel API](https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API)                   | &#9744;     | &#9744; | &#9744;                         |
-| [dynamic import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)             | &#9744;     | &#9744; | &#9744;                         |
+| [dynamic import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)             | &#9745;     | &#9744; | &#9744;                         |
 | [File and Directory Entries API](https://developer.mozilla.org/en-US/docs/Web/API/File_and_Directory_Entries_API) | &#9744;     | &#9744; | &#9745;                         |
 | [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/geolocation)                         | &#9745;     | &#9744; | &#9744;                         |
 | [Image Capture API](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream_Image_Capture_API)               | &#9744;     | &#9744; | &#9745;                         |
@@ -22,10 +22,10 @@ The public API surface of this library can be affected by breaking changes withi
 | [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation)                    | &#9745;     | &#9744; | &#9745;                         |
 | [PerformanceObserver](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)                       | &#9745;     | &#9744; | &#9745;                         |
 | [Push API](https://developer.mozilla.org/en-US/docs/Web/API/Push_API)                                             | &#9744;     | &#9744; | &#9745;                         |
+| [Permission API](https://developer.mozilla.org/en-US/docs/Web/API/Permissions)                                    | &#9745;     | &#9744; | &#9745;                         |
 | [ResizeObserver](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver)                                 | &#9745;     | &#9744; | &#9745;                         |
-| [Sensor APIs](https://developer.mozilla.org/en-US/docs/Web/API/Sensor_APIs)                                       | &#9744;     | &#9744; | &#9745;                         |
+| [Sensor APIs](https://developer.mozilla.org/en-US/docs/Web/API/Sensor_APIs)                                       | &#9745;     | &#9744; | &#9745;                         |
 | [Vibration API](https://developer.mozilla.org/en-US/docs/Web/API/Vibration_API)                                   | &#9744;     | &#9744; | &#9745;                         |
-| [Web Workers API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API)                               | &#9744;     | &#9744; | &#9744;                         |
 
 ## Credits
 
