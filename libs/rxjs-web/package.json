@@ -1,6 +1,6 @@
 {
 	"name": "rxjs-web",
-	"version": null,
+	"version": "1.0.0-alpha.0",
 	"dependencies": {
 		"rxjs": "^6.4.0",
 		"@types/resize-observer-browser": "^0.1.3",
