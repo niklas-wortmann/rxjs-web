@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 import { NotSupportedException, FEATURE } from '../types/support.exception';
-import { fromError } from '../types/errorObservable';
+import { fromError } from '../types/fromError';
 
 const hasPerformanceObserverSupport = (): boolean => {
 	return ['PerformanceObserver', 'PerformanceObserverEntryList'].every(feature => feature in window);

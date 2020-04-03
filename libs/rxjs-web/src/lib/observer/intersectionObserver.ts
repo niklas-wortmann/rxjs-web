@@ -1,7 +1,7 @@
 import { Observable, TeardownLogic } from 'rxjs';
 import { ObserverNotification } from '../types/observer';
 import { NotSupportedException, FEATURE } from '../types/support.exception';
-import { fromError } from '../types/errorObservable';
+import { fromError } from '../types/fromError';
 
 const hasIntersectionObserverSupport = (): boolean => {
 	return ['IntersectionObserver', 'IntersectionObserverEntry'].every(feature => feature in window);

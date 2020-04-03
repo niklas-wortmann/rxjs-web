@@ -1,6 +1,6 @@
 import { Observable, TeardownLogic } from 'rxjs';
 import { NotSupportedException, FEATURE } from '../types/support.exception';
-import { fromError } from '../types/errorObservable';
+import { fromError } from '../types/fromError';
 
 const hasPositionSupport = (): boolean => {
 	return navigator != null && navigator.geolocation != null && navigator.geolocation.watchPosition != null;

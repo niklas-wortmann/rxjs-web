@@ -1,6 +1,6 @@
 import { fromEventPattern, Observable } from 'rxjs';
 import { NotSupportedException, FEATURE } from '../types/support.exception';
-import { fromError } from '../types/errorObservable';
+import { fromError } from '../types/fromError';
 
 /**
  * A RxJS operator for getting the results of the

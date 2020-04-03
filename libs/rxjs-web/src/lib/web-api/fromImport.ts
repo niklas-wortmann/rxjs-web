@@ -1,5 +1,5 @@
 import { Observable, defer, from, ObservedValueOf } from 'rxjs';
-import { fromError } from '../types/errorObservable';
+import { fromError } from '../types/fromError';
 
 /**
  * operator for dynamic imports.

@@ -1,6 +1,6 @@
 import { defer, fromEventPattern, Observable } from 'rxjs';
 import { finalize, share } from 'rxjs/operators';
-import { fromError } from '../types/errorObservable';
+import { fromError } from '../types/fromError';
 
 /**
  * This will wrap the Sensor API in an Observable. It doesn't check if one has permission for a sensor or

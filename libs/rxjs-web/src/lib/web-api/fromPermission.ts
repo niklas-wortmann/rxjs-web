@@ -1,6 +1,6 @@
 import { Observable, defer, from } from 'rxjs';
 import { NotSupportedException, FEATURE } from '../types/support.exception';
-import { fromError } from '../types/errorObservable';
+import { fromError } from '../types/fromError';
 
 const hasPermissionSupport = (): boolean => {
 	return window != null && window.navigator != null && window.navigator.permissions != null;
