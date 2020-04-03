@@ -1,84 +1,97 @@
 {
-  "name": "rxjs-web-refactor",
-  "version": "0.0.0",
-  "license": "MIT",
-  "scripts": {
-    "nx": "nx",
-    "start": "nx serve",
-    "build": "nx build",
-    "test": "nx test",
-    "lint": "nx workspace-lint && nx lint",
-    "e2e": "nx e2e",
-    "affected:apps": "nx affected:apps",
-    "affected:libs": "nx affected:libs",
-    "affected:build": "nx affected:build",
-    "affected:e2e": "nx affected:e2e",
-    "affected:test": "nx affected:test",
-    "affected:lint": "nx affected:lint",
-    "affected:dep-graph": "nx affected:dep-graph",
-    "affected": "nx affected",
-    "format": "nx format:write",
-    "format:write": "nx format:write",
-    "format:check": "nx format:check",
-    "update": "nx migrate latest",
-    "workspace-schematic": "nx workspace-schematic",
-    "dep-graph": "nx dep-graph",
-    "help": "nx help",
-    "travis-deploy-once": "travis-deploy-once",
-    "semantic-release": "semantic-release",
-    "semantic-release-prepare": "ts-node tools/semantic-release-prepare"
-  },
-  "private": true,
-  "dependencies": {
-    "@types/resize-observer-browser": "^0.1.3",
-    "document-register-element": "1.13.1"
-  },
-  "devDependencies": {
-    "@nrwl/eslint-plugin-nx": "9.0.4",
-    "@nrwl/jest": "^9.0.4",
-    "@nrwl/node": "^9.0.4",
-    "@nrwl/web": "^9.0.4",
-    "@nrwl/workspace": "9.0.4",
-    "@types/jest": "25.1.4",
-    "@types/node": "^13.9.0",
-    "@typescript-eslint/eslint-plugin": "^2.22.0",
-    "@typescript-eslint/parser": "^2.22.0",
-    "core-js": "^3.6.4",
-    "dotenv": "8.2.0",
-    "eslint": "6.8.0",
-    "eslint-config-prettier": "^6.10.0",
-    "eslint-plugin-prettier": "^3.1.2",
-    "husky": "^4.2.3",
-    "jest": "25.1.0",
-    "jest-environment-puppeteer": "^4.4.0",
-    "lint-staged": "^10.0.8",
-    "prettier": "^1.19.1",
-    "puppeteer": "^2.1.1",
-    "semantic-release": "^17.0.4",
-    "travis-deploy-once": "^5.0.11",
-    "ts-jest": "25.2.1",
-    "ts-node": "~8.6.2",
-    "tslint": "~6.0.0",
-    "typescript": "~3.8.3",
-    "cypress": "^3.8.2",
-    "@nrwl/cypress": "9.0.4"
-  },
-  "lint-staged": {
-    "{src}/**/*.ts": [
-      "prettier --write",
-      "git add"
-    ]
-  },
-  "files": [
-    "dist"
-  ],
-  "author": "Jan-Niklas Wortmann <6104311+JWO719@users.noreply.github.com>",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/JWO719/rxjs-web"
-  },
-  "engines": {
-    "node": ">=10.0.0"
-  },
-  "types": "src/**/*.d.ts"
+	"name": "rxjs-web-refactor",
+	"version": "0.0.0",
+	"license": "MIT",
+	"scripts": {
+		"nx": "nx",
+		"start": "nx serve",
+		"build": "nx build",
+		"test": "nx test",
+		"lint": "nx workspace-lint && nx lint",
+		"e2e": "nx e2e",
+		"affected:apps": "nx affected:apps",
+		"affected:libs": "nx affected:libs",
+		"affected:build": "nx affected:build",
+		"affected:e2e": "nx affected:e2e",
+		"affected:test": "nx affected:test",
+		"affected:lint": "nx affected:lint",
+		"affected:dep-graph": "nx affected:dep-graph",
+		"affected": "nx affected",
+		"format": "nx format:write",
+		"format:write": "nx format:write",
+		"format:check": "nx format:check",
+		"update": "nx migrate latest",
+		"workspace-schematic": "nx workspace-schematic",
+		"dep-graph": "nx dep-graph",
+		"help": "nx help",
+		"travis-deploy-once": "travis-deploy-once",
+		"semantic-release": "semantic-release",
+		"semantic-release-prepare": "ts-node tools/semantic-release-prepare",
+		"commit": "npx git-cz"
+	},
+	"private": true,
+	"dependencies": {
+		"@types/resize-observer-browser": "^0.1.3",
+		"@types/w3c-generic-sensor": "^1.0.2",
+		"document-register-element": "1.13.1"
+	},
+	"devDependencies": {
+		"@nrwl/cypress": "9.0.4",
+		"@nrwl/eslint-plugin-nx": "9.0.4",
+		"@nrwl/jest": "^9.0.4",
+		"@nrwl/node": "^9.0.4",
+		"@nrwl/web": "^9.0.4",
+		"@nrwl/workspace": "9.0.4",
+		"@types/jest": "25.1.4",
+		"@types/node": "^13.9.0",
+		"@typescript-eslint/eslint-plugin": "^2.22.0",
+		"@typescript-eslint/parser": "^2.22.0",
+		"commitizen": "^4.0.3",
+		"core-js": "^3.6.4",
+		"cypress": "^3.8.2",
+		"dotenv": "8.2.0",
+		"eslint": "6.8.0",
+		"eslint-config-prettier": "^6.10.0",
+		"eslint-plugin-prettier": "^3.1.2",
+		"husky": "^4.2.3",
+		"jest": "25.1.0",
+		"jest-environment-puppeteer": "^4.4.0",
+		"lint-staged": "^10.0.8",
+		"prettier": "^1.19.1",
+		"puppeteer": "^2.1.1",
+		"semantic-release": "^17.0.4",
+		"travis-deploy-once": "^5.0.11",
+		"ts-jest": "25.2.1",
+		"ts-node": "~8.6.2",
+		"tslint": "~6.0.0",
+		"typescript": "~3.8.3"
+	},
+	"husky": {
+		"hooks": {
+			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+		}
+	},
+	"lint-staged": {
+		"{src}/**/*.ts": [
+			"prettier --write",
+			"git add"
+		]
+	},
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-conventional-changelog"
+		}
+	},
+	"files": [
+		"dist"
+	],
+	"author": "Jan-Niklas Wortmann <6104311+JWO719@users.noreply.github.com>",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/JWO719/rxjs-web"
+	},
+	"engines": {
+		"node": ">=10.0.0"
+	},
+	"types": "src/**/*.d.ts"
 }

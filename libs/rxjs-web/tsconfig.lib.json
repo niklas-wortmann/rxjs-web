@@ -1,12 +1,12 @@
 {
-  "extends": "./tsconfig.json",
-  "compilerOptions": {
-    "module": "commonjs",
-    "outDir": "../../dist/out-tsc",
-    "declaration": true,
-    "rootDir": "./src",
-    "types": ["node", "resize-observer-browser"]
-  },
-  "exclude": ["**/*.spec.ts"],
-  "include": ["**/*.ts"]
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"module": "commonjs",
+		"outDir": "../../dist/out-tsc",
+		"declaration": true,
+		"rootDir": "./src",
+		"types": ["node", "resize-observer-browser", "w3c-generic-sensor"]
+	},
+	"exclude": ["**/*.spec.ts"],
+	"include": ["**/*.ts"]
 }

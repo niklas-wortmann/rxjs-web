@@ -1,6 +1,6 @@
 # RxJS Web Library
 
-This library aims to provide an `observable` based api, that wraps the web api. This also includes experimental, non-standard and not well supported apis. Polyfills need to be provided by the user of this library if necessary.
+This library aims to provide an `observable` based API, that wraps the web APIapi. This also includes experimental, non-standard and not well-supported APIs. Polyfills need to be provided by the user of this library if necessary.
 
 This library uses the Observable implementation of [rxjs >= 6](https://www.npmjs.com/package/rxjs).
 
