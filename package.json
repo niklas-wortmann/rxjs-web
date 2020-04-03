@@ -26,7 +26,7 @@
 		"help": "nx help",
 		"travis-deploy-once": "travis-deploy-once",
 		"prerelease": "npm run build && npm run overwrite:readme",
-		"release": "standard-version --prerelease alpha",
+		"release": "standard-version --prerelease alpha --release-as 1.0.0",
 		"postrelease": "npm run copy:changelog && git push --follow-tags origin development && npm publish ./dist/libs/rxjs-web --tag alpha",
 		"copy:changelog": "cp CHANGELOG.md ./dist/libs/rxjs-web",
 		"overwrite:readme": "yes | cp -f README.md ./dist/libs/rxjs-web",
