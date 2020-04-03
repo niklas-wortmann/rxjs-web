@@ -9,6 +9,8 @@ module.exports = {
 	resolver: '@nrwl/jest/plugins/resolver',
 	moduleFileExtensions: ['ts', 'js', 'html'],
 	coverageReporters: ['html'],
+	rootDir: 'libs/rxjs-web/',
+	testURL: 'http://localhost/',
 	coverageThreshold: {
 		global: {
 			branches: 60,
@@ -17,5 +19,10 @@ module.exports = {
 			statements: 75,
 		},
 	},
-	setupFiles: ['<rootDir>/../../test/browser.ts'],
+	setupFiles: ['<rootDir>../../test/browser.ts'],
+	globals: {
+		'ts-jest': {
+			diagnostics: false,
+		},
+	},
 };

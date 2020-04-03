@@ -1,13 +1,8 @@
 import { fromIntersectionObserver } from './intersectionObserver';
 
 describe('fromIntersectionObserver', () => {
-	let element: Element;
-
-	beforeEach(() => {
-		element = document.createElement('div');
-	});
-
 	it('should return an interaction observer', () => {
+		const element = document.createElement('div');
 		fromIntersectionObserver(element).subscribe({
 			next: ({ entries }) => {
 				expect(entries).toBeInstanceOf(Array);

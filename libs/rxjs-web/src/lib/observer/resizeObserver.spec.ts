@@ -1,13 +1,8 @@
 import { fromResizeObserver } from './resizeObserver';
 
 describe('fromResizeObserver', () => {
-	let element: Element;
-
-	beforeEach(() => {
-		element = document.createElement('div');
-	});
-
 	it('should return an resize observer', () => {
+		const element = document.createElement('div');
 		fromResizeObserver(element).subscribe({
 			next: ({ entries }) => {
 				expect(entries).toBeInstanceOf(Array);

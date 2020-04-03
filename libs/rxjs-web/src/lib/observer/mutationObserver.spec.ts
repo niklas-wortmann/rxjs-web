@@ -1,13 +1,8 @@
 import { fromMutationObserver } from './mutationObserver';
 
 describe('fromMutationObserver', () => {
-	let element: Element;
-
-	beforeEach(() => {
-		element = document.createElement('div');
-	});
-
 	it('should return an mutation observer', () => {
+		const element = document.createElement('div');
 		fromMutationObserver(element).subscribe({
 			next: ({ entries }) => {
 				expect(entries).toBeInstanceOf(Array);

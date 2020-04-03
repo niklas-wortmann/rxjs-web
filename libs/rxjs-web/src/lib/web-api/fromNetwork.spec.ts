@@ -1,8 +1,8 @@
-import { observeNetwork } from './network';
+import { fromNetwork } from './fromNetwork';
 
 describe('observeNetwork', () => {
 	it('should return a network event', () => {
-		observeNetwork().subscribe({
+		fromNetwork().subscribe({
 			next: event => {
 				expect(event).toBeTruthy();
 			},

@@ -1,15 +1,8 @@
-import { fromMediaListQuery } from './matchMedia';
+import { fromMediaListQuery } from './fromMediaListQuery';
 
 describe('fromMediaListQuery', () => {
-	let mediaQueryList: any;
-
-	beforeEach(() => {
-		mediaQueryList = {
-			addEventListener: (name: string, handler: any) => handler({ matches: true }),
-		};
-	});
-
 	it('should return an mutation observer', () => {
+		const mediaQueryList = window.matchMedia('(min-width: 1px)');
 		fromMediaListQuery(mediaQueryList).subscribe({
 			next: ({ matches }) => {
 				expect(matches).toBeTruthy();

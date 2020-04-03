@@ -12,7 +12,7 @@ const hasPositionSupport = (): boolean => {
  * @param options Geolocation options
  * @returns An Observable of current browser location
  */
-export function observePosition(options?: PositionOptions): Observable<Position | never> {
+export function fromPosition(options?: PositionOptions): Observable<Position | never> {
 	if (!hasPositionSupport()) {
 		return fromError(new NotSupportedException(FEATURE.GEOLOCATION));
 	}

@@ -4,7 +4,7 @@ import { NotSupportedException, FEATURE } from '../types/support.exception';
 import { fromError } from '../types/errorObservable';
 
 const hasResizeObserverSupport = (): boolean => {
-	return ['ResizeObserverEntry', 'ResizeObserver'].every(feature => feature in window);
+	return ['ResizeObserver', 'ResizeObserverEntry'].every(feature => feature in window);
 };
 
 /**

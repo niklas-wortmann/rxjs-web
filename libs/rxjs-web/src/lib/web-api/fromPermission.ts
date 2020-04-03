@@ -13,8 +13,9 @@ type PermissionQuery =
 	| PushPermissionDescriptor;
 
 /**
- *
- * @param query
+ * This API requests permission to use certain permission-based APIs.
+ * It will emit an error Event if the browser does not support the permission API.
+ * @param query used for Permission Request
  */
 export const fromPermission = (query: PermissionQuery): Observable<PermissionStatus | never> => {
 	if (!hasPermissionSupport()) {

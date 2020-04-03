@@ -27,6 +27,34 @@ The public API surface of this library can be affected by breaking changes withi
 | [Sensor APIs](https://developer.mozilla.org/en-US/docs/Web/API/Sensor_APIs)                                       | &#9745;     | &#9744; | &#9745;                         |
 | [Vibration API](https://developer.mozilla.org/en-US/docs/Web/API/Vibration_API)                                   | &#9744;     | &#9744; | &#9745;                         |
 
+## API Reference
+
+General Hint: Usually Promises are eager. All the APIs provided by this library, that wraps native promise-based APIs, are lazy though. This design decision was made due to the general specification of Observables.
+
+### Observer
+
+#### fromIntersectionObserver
+
+#### fromMutationObserver
+
+#### fromPerformanceObserver
+
+#### fromResizeObserver
+
+### other Web-APIs
+
+#### fromImport
+
+#### fromMediaListQuery
+
+#### fromNetwork
+
+#### fromPermission
+
+#### fromPosition
+
+#### fromSensor
+
 ## Credits
 
 This project is build upon the [typescript library starter](https://github.com/alexjoverm/typescript-library-starter). Kudos to [@alexjoverm](https://twitter.com/alexjoverm) and every contributor of this amazing project!

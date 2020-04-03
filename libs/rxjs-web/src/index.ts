@@ -1,21 +1,21 @@
-// Import here Polyfills if needed. Recommended core-js (npm i -D core-js)
-// import "core-js/fn/array.find"
-// ...
-
 // Observer API
-export { fromMutationObserver as observeMutation, MutationNotification } from './lib/observer/mutationObserver';
-export { fromResizeObserver as observeResize, ResizeNotification } from './lib/observer/resizeObserver';
-export {
-	fromPerformanceObserver as observePerformance,
-	PerformanceNotification,
-} from './lib/observer/performanceObserver';
+export { fromMutationObserver, MutationNotification } from './lib/observer/mutationObserver';
+export { fromResizeObserver, ResizeNotification } from './lib/observer/resizeObserver';
+export { fromPerformanceObserver, PerformanceNotification } from './lib/observer/performanceObserver';
 export {
 	fromIntersectionObserver as observeIntersection,
 	IntersectionNotification,
 } from './lib/observer/intersectionObserver';
 
-// Geolocation API
-export { observePosition } from './lib/web-api/geolocation';
-
+// Dynamic Import API
+export { fromImport } from './lib/web-api/fromImport';
+// MediaListQuery API
+export { fromMediaListQuery } from './lib/web-api/fromMediaListQuery';
 // Network API
-export { observeNetwork } from './lib/web-api/network';
+export { fromNetwork } from './lib/web-api/fromNetwork';
+// Permission API
+export { fromPermission } from './lib/web-api/fromPermission';
+// Geolocation API
+export { fromPosition } from './lib/web-api/fromPosition';
+// Sensor API
+export { fromSensor } from './lib/web-api/fromSensor';
