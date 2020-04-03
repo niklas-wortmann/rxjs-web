@@ -1,6 +1,7 @@
 import { Observable, TeardownLogic } from 'rxjs';
 import { ObserverNotification } from '../types/observer';
 import { NotSupportedException, FEATURE } from '../types/support.exception';
+import { fromError } from '../types/errorObservable';
 
 const hasIntersectionObserverSupport = (): boolean => {
 	return ['IntersectionObserver', 'IntersectionObserverEntry'].every(feature => feature in window);
@@ -23,17 +24,15 @@ export function fromIntersectionObserver(
 	target: Element,
 	options?: IntersectionObserverInit
 ): Observable<IntersectionNotification | never> {
+	if (!hasIntersectionObserverSupport()) {
+		return fromError(new NotSupportedException(FEATURE.INTERSECTION_OBSERVER));
+	}
 	return new Observable(subscriber => {
-		if (!hasIntersectionObserverSupport()) {
-			subscriber.error(new NotSupportedException(FEATURE.INTERSECTION_OBSERVER));
-			return;
-		} else {
-			const intersectionObserver = new IntersectionObserver((entries, observer) => {
-				subscriber.next({ entries, observer });
-			}, options);
-			intersectionObserver.observe(target);
-			const teardown: TeardownLogic = () => intersectionObserver.unobserve(target);
-			return teardown;
-		}
+		const intersectionObserver = new IntersectionObserver((entries, observer) => {
+			subscriber.next({ entries, observer });
+		}, options);
+		intersectionObserver.observe(target);
+		const teardown: TeardownLogic = () => intersectionObserver.unobserve(target);
+		return teardown;
 	});
 }

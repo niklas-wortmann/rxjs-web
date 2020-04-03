@@ -1,5 +1,6 @@
 import { Observable, TeardownLogic } from 'rxjs';
 import { NotSupportedException, FEATURE } from '../types/support.exception';
+import { fromError } from '../types/errorObservable';
 
 const hasPositionSupport = (): boolean => {
 	return navigator != null && navigator.geolocation != null && navigator.geolocation.watchPosition != null;
@@ -12,18 +13,16 @@ const hasPositionSupport = (): boolean => {
  * @returns An Observable of current browser location
  */
 export function observePosition(options?: PositionOptions): Observable<Position | never> {
+	if (!hasPositionSupport()) {
+		return fromError(new NotSupportedException(FEATURE.GEOLOCATION));
+	}
 	return new Observable(subscriber => {
-		if (!hasPositionSupport()) {
-			subscriber.error(new NotSupportedException(FEATURE.GEOLOCATION));
-			return;
-		} else {
-			const watchId = navigator.geolocation.watchPosition(
-				position => !subscriber.closed && subscriber.next(position),
-				error => !subscriber.closed && subscriber.error(error),
-				options
-			);
-			const teardown: TeardownLogic = () => navigator.geolocation.clearWatch(watchId);
-			return teardown;
-		}
+		const watchId = navigator.geolocation.watchPosition(
+			position => !subscriber.closed && subscriber.next(position),
+			error => !subscriber.closed && subscriber.error(error),
+			options
+		);
+		const teardown: TeardownLogic = () => navigator.geolocation.clearWatch(watchId);
+		return teardown;
 	});
 }

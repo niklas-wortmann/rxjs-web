@@ -1,6 +1,7 @@
 import { Observable, TeardownLogic } from 'rxjs';
 import { ObserverNotification } from '../types/observer';
 import { NotSupportedException, FEATURE } from '../types/support.exception';
+import { fromError } from '../types/errorObservable';
 
 const hasResizeObserverSupport = (): boolean => {
 	return ['ResizeObserverEntry', 'ResizeObserver'].every(feature => feature in window);
@@ -23,17 +24,15 @@ export function fromResizeObserver(
 	target: Element,
 	options?: ResizeObserverOptions
 ): Observable<ResizeNotification | never> {
+	if (!hasResizeObserverSupport()) {
+		return fromError(new NotSupportedException(FEATURE.RESIZE_OBSERVER));
+	}
 	return new Observable(subscriber => {
-		if (!hasResizeObserverSupport()) {
-			subscriber.error(new NotSupportedException(FEATURE.RESIZE_OBSERVER));
-			return;
-		} else {
-			const resizeObserver = new ResizeObserver((entries, observer) => {
-				subscriber.next({ entries, observer });
-			});
-			resizeObserver.observe(target, options);
-			const teardown: TeardownLogic = () => resizeObserver.unobserve(target);
-			return teardown;
-		}
+		const resizeObserver = new ResizeObserver((entries, observer) => {
+			subscriber.next({ entries, observer });
+		});
+		resizeObserver.observe(target, options);
+		const teardown: TeardownLogic = () => resizeObserver.unobserve(target);
+		return teardown;
 	});
 }

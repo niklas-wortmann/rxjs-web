@@ -2,7 +2,7 @@
 	"extends": "./tsconfig.json",
 	"compilerOptions": {
 		"module": "commonjs",
-		"outDir": "../../dist/out-tsc",
+		"outDir": "../../dist/rxjs-web",
 		"declaration": true,
 		"rootDir": "./src",
 		"types": ["node", "resize-observer-browser", "w3c-generic-sensor"]

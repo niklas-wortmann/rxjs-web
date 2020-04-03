@@ -1,5 +1,6 @@
 import { fromEventPattern, Observable } from 'rxjs';
 import { NotSupportedException, FEATURE } from '../types/support.exception';
+import { fromError } from '../types/errorObservable';
 
 /**
  * A RxJS operator for getting the results of the
@@ -8,7 +9,7 @@ import { NotSupportedException, FEATURE } from '../types/support.exception';
  */
 export function observeNetwork(): Observable<Event | never> {
 	if (!navigator.connection) {
-		return new Observable(subscriber => subscriber.error(new NotSupportedException(FEATURE.NETWORK)));
+		return fromError(new NotSupportedException(FEATURE.NETWORK));
 	} else {
 		const connection = navigator.connection;
 		return fromEventPattern(

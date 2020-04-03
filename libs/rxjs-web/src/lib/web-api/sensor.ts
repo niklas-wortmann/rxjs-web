@@ -1,5 +1,6 @@
 import { defer, fromEventPattern, Observable } from 'rxjs';
 import { finalize, share } from 'rxjs/operators';
+import { fromError } from '../types/errorObservable';
 
 /**
  * This will wrap the Sensor API in an Observable. It doesn't check if one has permission for a sensor or
@@ -13,7 +14,7 @@ export const fromSensor = (
 	sensor: Sensor,
 	event: 'reading' | 'activate' = 'reading',
 	useCapture?: boolean
-): Observable<Event> => {
+): Observable<Event | never> => {
 	const obs = defer(() => {
 		if (sensor) {
 			sensor.start();
@@ -22,10 +23,9 @@ export const fromSensor = (
 				handler => sensor.addEventListener('error', handler, useCapture)
 			);
 		} else {
-			const sensorUndefinedError = new Error('passed sensor reference is undefined');
-			return new Observable(subscriber => subscriber.error(sensorUndefinedError));
+			return fromError(new Error('passed sensor reference is undefined'));
 		}
-	}) as Observable<Event>;
+	});
 	return obs.pipe(
 		finalize(() => {
 			if (sensor) {

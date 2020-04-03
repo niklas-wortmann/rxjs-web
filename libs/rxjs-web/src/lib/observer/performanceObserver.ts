@@ -1,5 +1,6 @@
 import { Observable } from 'rxjs';
 import { NotSupportedException, FEATURE } from '../types/support.exception';
+import { fromError } from '../types/errorObservable';
 
 const hasPerformanceObserverSupport = (): boolean => {
 	return ['PerformanceObserver', 'PerformanceObserverEntryList'].every(feature => feature in window);
@@ -30,16 +31,14 @@ export interface PerformanceNotification {
 export function fromPerformanceObserver(
 	options?: PerformanceObserverInit
 ): Observable<PerformanceNotification | never> {
+	if (!hasPerformanceObserverSupport()) {
+		return fromError(new NotSupportedException(FEATURE.PERFORMANCE_OBSERVER));
+	}
 	return new Observable(subscriber => {
-		if (!hasPerformanceObserverSupport()) {
-			subscriber.error(new NotSupportedException(FEATURE.PERFORMANCE_OBSERVER));
-			return;
-		} else {
-			const performanceObserver = new PerformanceObserver((entries, observer) => {
-				subscriber.next({ entries, observer });
-			});
-			performanceObserver.observe(options);
-			return performanceObserver.disconnect;
-		}
+		const performanceObserver = new PerformanceObserver((entries, observer) => {
+			subscriber.next({ entries, observer });
+		});
+		performanceObserver.observe(options);
+		return performanceObserver.disconnect;
 	});
 }
