@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0-alpha.1](https://github.com/JWO719/rxjs-web/compare/v1.0.0-alpha.0...v1.0.0-alpha.1) (2020-04-04)
+
+
+### Features
+
+* **fromposition:** throws an error now when permission is not granted ([e8d99ef](https://github.com/JWO719/rxjs-web/commit/e8d99ef903c7d3820a407ab8006b48da9bcaf5e4))
+
 ## 1.0.0-alpha.0 (2020-04-03)
 
 
