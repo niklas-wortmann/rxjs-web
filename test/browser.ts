@@ -51,6 +51,9 @@ Object.assign(global, {
 			addEventListener: (name: string, handler: any) => handler({ event: true }),
 			removeEventListener: () => undefined,
 		},
+		permissions: {
+			query: () => new Promise(res => res({ state: 'granted' })),
+		},
 	},
 });
 Object.assign(global, observerMocks);
