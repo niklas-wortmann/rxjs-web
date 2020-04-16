@@ -1,4 +1,4 @@
-# RxJS Web Library
+# <img src="docs/assets/rxjs-web-logo.svg" alt="RxJS Web Logo" width="86" height="86"> RxJS Web Library
 
 This library aims to provide an `observable` based API, that wraps the web APIapi. This also includes experimental, non-standard and not well-supported APIs. Polyfills need to be provided by the user of this library if necessary.
 
