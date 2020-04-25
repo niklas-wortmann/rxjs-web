@@ -16,7 +16,7 @@ export const fromSensor = (
 	event: 'reading' | 'activate' = 'reading',
 	useCapture?: boolean
 ): Observable<Event> => {
-	const obs = defer(() => {
+	const sensorEvent$ = defer(() => {
 		if (!sensor) {
 			return throwError(new Error('passed sensor reference is undefined'));
 		}
@@ -26,7 +26,7 @@ export const fromSensor = (
 			handler => sensor.addEventListener('error', handler, useCapture)
 		);
 	});
-	return obs.pipe(
+	return sensorEvent$.pipe(
 		finalize(() => {
 			if (sensor) {
 				sensor.stop();
