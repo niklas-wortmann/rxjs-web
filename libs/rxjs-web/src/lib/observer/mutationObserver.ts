@@ -15,6 +15,8 @@ export type MutationNotification = ObserverNotification<MutationRecord, Mutation
  * A RxJS operator for getting results from the
  * {@link https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver|MutationObserver API}
  * This observable will emit a {@link FeatureNotFullySupportedException} when the browser does not support Mutation Observer
+ * Do note: that MutationObserver requires at least of the following properties for the MutationObserverInit options:
+ * 'childList', 'attributes', 'chartacterData', otherwise it would throw a runtimeError
  * @param target The target element to observe
  * @param options `MutationObserver` options
  * @returns An Observable containing a list of `MutationRecord` items and the `MutationObserver`
