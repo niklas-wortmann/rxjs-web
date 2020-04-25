@@ -1,10 +1,9 @@
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { ObserverNotification } from '../types/observer';
 import { NotSupportedException, FEATURE } from '../types/support.exception';
-import { fromError } from '../types/fromError';
 
 const hasMutationObserverSupport = () => {
-	return ['MutationObserver', 'MutationRecord'].every(feature => feature in window);
+	return ['MutationObserver', 'MutationRecord'].every(feature => feature in globalThis);
 };
 
 /**
@@ -22,10 +21,10 @@ export type MutationNotification = ObserverNotification<MutationRecord, Mutation
  */
 export function fromMutationObserver(
 	target: Node,
-	options?: MutationObserverInit
-): Observable<MutationNotification | never> {
+	options: RequireAtLeastOne<MutationObserverInit, 'childList' | 'attributes' | 'characterData'>
+): Observable<MutationNotification> {
 	if (!hasMutationObserverSupport()) {
-		return fromError(new NotSupportedException(FEATURE.MUTATION_OBSERVER));
+		return throwError(new NotSupportedException(FEATURE.MUTATION_OBSERVER));
 	}
 	return new Observable(subscriber => {
 		const mutationObserver = new MutationObserver((entries, observer) => {

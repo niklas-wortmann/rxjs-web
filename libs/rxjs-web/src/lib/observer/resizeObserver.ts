@@ -1,10 +1,9 @@
-import { Observable, TeardownLogic } from 'rxjs';
+import { Observable, TeardownLogic, throwError } from 'rxjs';
 import { ObserverNotification } from '../types/observer';
 import { NotSupportedException, FEATURE } from '../types/support.exception';
-import { fromError } from '../types/fromError';
 
 const hasResizeObserverSupport = (): boolean => {
-	return ['ResizeObserver', 'ResizeObserverEntry'].every(feature => feature in window);
+	return ['ResizeObserver', 'ResizeObserverEntry'].every(feature => feature in globalThis);
 };
 
 /**
@@ -20,12 +19,9 @@ export type ResizeNotification = ObserverNotification<ResizeObserverEntry, Resiz
  * @param options `ResizeObserver` options
  * @returns An Observable containing a list of `ResizeObserverEntry` items and the `ResizeObserver`
  */
-export function fromResizeObserver(
-	target: Element,
-	options?: ResizeObserverOptions
-): Observable<ResizeNotification | never> {
+export function fromResizeObserver(target: Element, options?: ResizeObserverOptions): Observable<ResizeNotification> {
 	if (!hasResizeObserverSupport()) {
-		return fromError(new NotSupportedException(FEATURE.RESIZE_OBSERVER));
+		return throwError(new NotSupportedException(FEATURE.RESIZE_OBSERVER));
 	}
 	return new Observable(subscriber => {
 		const resizeObserver = new ResizeObserver((entries, observer) => {

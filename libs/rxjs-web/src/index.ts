@@ -18,5 +18,4 @@ export { fromPosition } from './lib/web-api/fromPosition';
 export { fromSensor } from './lib/web-api/fromSensor';
 
 // util types
-export { fromError } from './lib/types/fromError';
 export { NotSupportedException } from './lib/types/support.exception';

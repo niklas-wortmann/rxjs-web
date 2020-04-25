@@ -1,10 +1,9 @@
-import { Observable, TeardownLogic } from 'rxjs';
+import { Observable, TeardownLogic, throwError } from 'rxjs';
 import { ObserverNotification } from '../types/observer';
 import { NotSupportedException, FEATURE } from '../types/support.exception';
-import { fromError } from '../types/fromError';
 
 const hasIntersectionObserverSupport = (): boolean => {
-	return ['IntersectionObserver', 'IntersectionObserverEntry'].every(feature => feature in window);
+	return ['IntersectionObserver', 'IntersectionObserverEntry'].every(feature => feature in globalThis);
 };
 
 /**
@@ -23,9 +22,9 @@ export type IntersectionNotification = ObserverNotification<IntersectionObserver
 export function fromIntersectionObserver(
 	target: Element,
 	options?: IntersectionObserverInit
-): Observable<IntersectionNotification | never> {
+): Observable<IntersectionNotification> {
 	if (!hasIntersectionObserverSupport()) {
-		return fromError(new NotSupportedException(FEATURE.INTERSECTION_OBSERVER));
+		return throwError(new NotSupportedException(FEATURE.INTERSECTION_OBSERVER));
 	}
 	return new Observable(subscriber => {
 		const intersectionObserver = new IntersectionObserver((entries, observer) => {

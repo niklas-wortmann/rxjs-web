@@ -1,9 +1,8 @@
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { NotSupportedException, FEATURE } from '../types/support.exception';
-import { fromError } from '../types/fromError';
 
 const hasPerformanceObserverSupport = (): boolean => {
-	return ['PerformanceObserver', 'PerformanceObserverEntryList'].every(feature => feature in window);
+	return ['PerformanceObserver', 'PerformanceObserverEntryList'].every(feature => feature in globalThis);
 };
 
 /**
@@ -28,11 +27,9 @@ export interface PerformanceNotification {
  * @returns An Observable of a {@link https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserverEntryList|PerformanceObserverEntryList}
  * and the `PerformanceObserver`
  */
-export function fromPerformanceObserver(
-	options?: PerformanceObserverInit
-): Observable<PerformanceNotification | never> {
+export function fromPerformanceObserver(options?: PerformanceObserverInit): Observable<PerformanceNotification> {
 	if (!hasPerformanceObserverSupport()) {
-		return fromError(new NotSupportedException(FEATURE.PERFORMANCE_OBSERVER));
+		return throwError(new NotSupportedException(FEATURE.PERFORMANCE_OBSERVER));
 	}
 	return new Observable(subscriber => {
 		const performanceObserver = new PerformanceObserver((entries, observer) => {

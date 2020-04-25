@@ -6,6 +6,8 @@ This library uses the Observable implementation of [rxjs >= 6](https://www.npmjs
 
 The public API surface of this library can be affected by breaking changes within the experimental API used.
 
+Additionally, the implementation of this library makes use of [globalThis](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/globalThis) which breaks ie <= 11! There is no plan to add support for IE 11 in this library.
+
 ## Supported API Roadmap
 
 | API                                                                                                               | Implemented | Tested  | Experimental/not well supported |
@@ -58,3 +60,5 @@ General Hint: Usually Promises are eager. All the APIs provided by this library,
 ## Credits
 
 This project is build upon the [typescript library starter](https://github.com/alexjoverm/typescript-library-starter). Kudos to [@alexjoverm](https://twitter.com/alexjoverm) and every contributor of this amazing project!
+
+Many thanks also goes to [Sascha Nuissl](https://twitter.com/saschanuissl) for creating this fantastic logo!

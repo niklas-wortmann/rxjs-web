@@ -1,9 +1,8 @@
-import { Observable, defer, from } from 'rxjs';
+import { Observable, defer, from, throwError } from 'rxjs';
 import { NotSupportedException, FEATURE } from '../types/support.exception';
-import { fromError } from '../types/fromError';
 
 const hasPermissionSupport = (): boolean => {
-	return navigator != null && navigator.permissions != null;
+	return globalThis.navigator != null && globalThis.navigator.permissions != null;
 };
 
 type PermissionQuery =
@@ -17,9 +16,9 @@ type PermissionQuery =
  * It will emit an error Event if the browser does not support the permission API.
  * @param query used for Permission Request
  */
-export const fromPermission = (query: PermissionQuery): Observable<PermissionStatus | never> => {
+export const fromPermission = (query: PermissionQuery): Observable<PermissionStatus> => {
 	if (!hasPermissionSupport()) {
-		return fromError(new NotSupportedException(FEATURE.PERMISSION));
+		return throwError(new NotSupportedException(FEATURE.PERMISSION));
 	} else {
 		return defer(() => from(navigator.permissions.query(query)));
 	}

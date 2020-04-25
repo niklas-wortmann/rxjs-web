@@ -1,11 +1,14 @@
-import { Observable, TeardownLogic } from 'rxjs';
+import { Observable, TeardownLogic, throwError } from 'rxjs';
 import { NotSupportedException, FEATURE } from '../types/support.exception';
-import { fromError } from '../types/fromError';
 import { fromPermission } from './fromPermission';
 import { switchMap } from 'rxjs/operators';
 
 const hasPositionSupport = (): boolean => {
-	return navigator != null && navigator.geolocation != null && navigator.geolocation.watchPosition != null;
+	return (
+		globalThis.navigator != null &&
+		globalThis.navigator.geolocation != null &&
+		globalThis.navigator.geolocation.watchPosition != null
+	);
 };
 
 const watchPermission = (options?: PositionOptions): Observable<Position> =>
@@ -34,16 +37,16 @@ export class PositionPermissionNotGrantedException extends Error {
  * @param options Geolocation options
  * @returns An Observable of current browser location
  */
-export function fromPosition(options?: PositionOptions): Observable<Position | never> {
+export function fromPosition(options?: PositionOptions): Observable<Position> {
 	if (!hasPositionSupport()) {
-		return fromError(new NotSupportedException(FEATURE.GEOLOCATION));
+		return throwError(new NotSupportedException(FEATURE.GEOLOCATION));
 	}
 	return fromPermission({ name: 'geolocation' }).pipe(
 		switchMap((status: PermissionStatus) => {
 			if (status.state === 'granted') {
 				return watchPermission(options);
 			} else {
-				return fromError(new PositionPermissionNotGrantedException(status));
+				return throwError(new PositionPermissionNotGrantedException(status));
 			}
 		})
 	);
