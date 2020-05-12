@@ -22,6 +22,11 @@ const watchPermission = (options?: PositionOptions): Observable<Position> =>
 		return teardown;
 	});
 
+/**
+ * This Exception is thrown when the user didn't grant permission for the
+ * position API.
+ * see {@link fromPosition}
+ */
 export class PositionPermissionNotGrantedException extends Error {
 	public status: PermissionStatus;
 
