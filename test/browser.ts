@@ -42,9 +42,7 @@ Object.assign(global, {
 	navigator: {
 		...dom.window.navigator,
 		geolocation: {
-			watchPosition: (success: any, failure: any) => {
-				success({ timestamp: Date.now });
-			},
+			watchPosition: jest.fn(),
 			clearWatch: () => undefined,
 		},
 		connection: {

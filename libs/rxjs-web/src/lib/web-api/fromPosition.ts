@@ -11,7 +11,7 @@ const hasPositionSupport = (): boolean => {
 	);
 };
 
-const watchPermission = (options?: PositionOptions): Observable<Position> =>
+const watchPosition = (options?: PositionOptions): Observable<Position> =>
 	new Observable(subscriber => {
 		const watchId = navigator.geolocation.watchPosition(
 			position => !subscriber.closed && subscriber.next(position),
@@ -49,7 +49,7 @@ export function fromPosition(options?: PositionOptions): Observable<Position> {
 	return fromPermission({ name: 'geolocation' }).pipe(
 		switchMap((status: PermissionStatus) => {
 			if (status.state === 'granted') {
-				return watchPermission(options);
+				return watchPosition(options);
 			} else {
 				return throwError(new PositionPermissionNotGrantedException(status));
 			}
