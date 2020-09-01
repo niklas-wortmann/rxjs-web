@@ -9,7 +9,7 @@ export const enum FEATURE {
 }
 
 export class NotSupportedException extends Error {
-	constructor(feature: FEATURE, message = 'is not fully supported') {
+	constructor(public feature: FEATURE, message = 'is not fully supported') {
 		super(`${feature} ${message}`);
 	}
 }

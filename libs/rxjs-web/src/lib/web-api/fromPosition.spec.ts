@@ -3,7 +3,7 @@ import { take } from 'rxjs/operators';
 import { TestScheduler } from 'rxjs/testing';
 import 'jest-environment-puppeteer';
 
-describe('fromPosition', () => {
+xdescribe('fromPosition', () => {
 	let watchPositionSuccessCb: any;
 	let watchPositionErrorCb: any;
 

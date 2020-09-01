@@ -24,7 +24,7 @@ export function fromIntersectionObserver(
 	options?: IntersectionObserverInit
 ): Observable<IntersectionNotification> {
 	if (!hasIntersectionObserverSupport()) {
-		return throwError(new NotSupportedException(FEATURE.INTERSECTION_OBSERVER));
+		return throwError('new NotSupportedException(FEATURE.INTERSECTION_OBSERVER)');
 	}
 	return new Observable(subscriber => {
 		const intersectionObserver = new IntersectionObserver((entries, observer) => {
