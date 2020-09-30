@@ -16,10 +16,12 @@ describe('fromIntersectionObserver', () => {
 
 	it('should emit an error when there is no browser support', done => {
 		const element = document.createElement('div');
-		delete globalThis.IntersectionObserver;
+		const observerRef = globalThis.IntersectionObserver;
+		delete (globalThis as any).IntersectionObserver;
 		fromIntersectionObserver(element).subscribe({
 			error: e => {
 				expect(e.feature).toBe(FEATURE.INTERSECTION_OBSERVER);
+				globalThis.IntersectionObserver = observerRef;
 				done();
 			},
 		});
