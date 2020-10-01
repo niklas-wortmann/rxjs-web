@@ -1,7 +1,7 @@
 {
 	"extends": "../../tsconfig.json",
 	"compilerOptions": {
-		"types": ["node", "jest", "resize-observer-browser", "w3c-generic-sensor"]
+		"types": ["node", "jest", "resize-observer-browser", "w3c-generic-sensor", "web-bluetooth"]
 	},
 	"include": ["**/*.ts"]
 }
