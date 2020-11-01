@@ -1,9 +1,10 @@
 // Observer API
-export { fromMutationObserver, MutationNotification } from './lib/observer/mutationObserver';
-export { fromResizeObserver, ResizeNotification } from './lib/observer/resizeObserver';
-export { fromPerformanceObserver, PerformanceNotification } from './lib/observer/performanceObserver';
 export { fromIntersectionObserver, IntersectionNotification } from './lib/observer/intersectionObserver';
-
+export { fromMutationObserver, MutationNotification } from './lib/observer/mutationObserver';
+export { fromPerformanceObserver, PerformanceNotification } from './lib/observer/performanceObserver';
+export { fromResizeObserver, ResizeNotification } from './lib/observer/resizeObserver';
+// util types
+export { NotSupportedException } from './lib/types/support.exception';
 // Dynamic Import API
 export { fromImport } from './lib/web-api/fromImport';
 // MediaListQuery API
@@ -16,6 +17,5 @@ export { fromPermission } from './lib/web-api/fromPermission';
 export { fromPosition } from './lib/web-api/fromPosition';
 // Sensor API
 export { fromSensor } from './lib/web-api/fromSensor';
-
-// util types
-export { NotSupportedException } from './lib/types/support.exception';
+// Web Speech API
+export { listen, speak } from './lib/web-api/SpeechAPI';
