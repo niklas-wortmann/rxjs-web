@@ -201,7 +201,7 @@ Thanks!
 
 This project is build upon the [typescript library starter](https://github.com/alexjoverm/typescript-library-starter). Kudos to [@alexjoverm](https://twitter.com/alexjoverm) and every contributor of this amazing project!
 
-Many thanks also goes to [Sascha Nuissl](https://twitter.com/saschanuissl) for creating this fantastic logo!
+Many thanks also goes to [Sascha](https://twitter.com/_tidusIO) for creating this fantastic logo!
 
 
 ## Enjoy 🙂
