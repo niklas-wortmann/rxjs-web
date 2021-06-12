@@ -6,6 +6,7 @@ export const enum FEATURE {
 	GEOLOCATION = 'Geolocation API',
 	NETWORK = 'Network API',
 	PERMISSION = 'Permission API',
+	BLUETOOTH = 'Web Bluetooth API',
 }
 
 export class NotSupportedException extends Error {

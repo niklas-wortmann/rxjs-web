@@ -5,7 +5,7 @@
 		"outDir": "../../dist/rxjs-web",
 		"declaration": true,
 		"rootDir": "./src",
-		"types": ["node", "resize-observer-browser", "w3c-generic-sensor"]
+		"types": ["node", "resize-observer-browser", "w3c-generic-sensor", "web-bluetooth"]
 	},
 	"exclude": ["**/*.spec.ts"],
 	"include": ["**/*.ts"]
