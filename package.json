@@ -46,7 +46,7 @@
 		"@nrwl/eslint-plugin-nx": "9.0.4",
 		"@nrwl/jest": "^9.0.4",
 		"@nrwl/node": "^9.0.4",
-		"@nrwl/web": "^9.0.4",
+		"@nrwl/web": "^15.0.13",
 		"@nrwl/workspace": "9.0.4",
 		"@types/jest": "25.1.4",
 		"@types/node": "^13.9.0",
